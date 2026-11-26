@@ -73,7 +73,17 @@ At any point, the Sender can raise a customer query, which is handled by the Alp
 
 ## Class Diagram
 
-_To be added._
+![Class diagram](docs/diagrams/class-diagram.png)
+
+The class diagram is organized into five zones. Tags in curly braces under a class name show which enterprise it belongs to. The full list of classes, attributes, methods and relationships is in the [class diagram specification](docs/diagrams/class-diagram-spec.md).
+
+1. **Ecosystem structure:** `EcoSystem` (a singleton) contains the Canada and Ghana `Network`s. Each network contains enterprises: the abstract `Enterprise` class has three subclasses, `MTOEnterprise`, `AlpayEnterprise` and `PartnerBankEnterprise`. Each enterprise contains organizations, and the abstract `Organization` class has four subclasses, one per department.
+2. **Users and roles:** every `UserAccount` belongs to a `Person` and has exactly one `Role`. The abstract `Role` class has seven subclasses, each overriding `createWorkArea()` so that every user sees their own screen after logging in (polymorphism).
+3. **Transfers and work requests:** a `Transfer` pays one `Beneficiary` by MoMo wallet or bank account and always has one `TransferStatus`. Each step is a `WorkRequest` (abstract) with four types: `TransferRequest`, `PaymentInstruction`, `SettlementRequest` and `CustomerQuery`. Requests are held in each organization's `WorkQueue`, and the `ReconciliationReport` checks transfers for mismatches and delays.
+4. **Database layer:** the `CrudDAO` interface defines create, read, update and delete; six DAO classes implement it and use a single `DBConnection` (a singleton) to connect to MySQL.
+5. **User interface:** `MainJFrame` handles login, each role opens its own work area panel, and the MTO Officer and Alpay Compliance Officer share the `ReconciliationReportPanel`.
+
+**OOP concepts used:** abstract classes, inheritance, interfaces, polymorphism, encapsulation (private attributes) and the singleton pattern.
 
 ---
 

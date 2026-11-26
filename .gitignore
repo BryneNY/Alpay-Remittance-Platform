@@ -1,0 +1,43 @@
+# Compiled Java files
+*.class
+*.jar
+*.war
+*.ear
+
+# Build output folders
+target/
+build/
+out/
+bin/
+dist/
+
+# NetBeans
+nbproject/private/
+nbbuild/
+nbdist/
+.nb-gradle/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# VS Code
+.vscode/
+
+# Logs
+*.log
+
+# macOS system files
+.DS_Store
+
+# Local secrets and environment settings (never upload passwords)
+.env
+*.env
+
+# Local Docker database data
+mysql-data/

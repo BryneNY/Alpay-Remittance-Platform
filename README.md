@@ -3,7 +3,9 @@
 A Java desktop application that connects a Canadian money transfer operator (MTO), Alpay and a Ghanaian partner bank on one shared platform, so that remittances from Canada to Ghana can be verified, screened, settled, paid out and reconciled through tracked work requests.
 
 **Course:** INFO 5100 - Application Engineering & Development
+
 **Student:** Bryne Abeiku Nyame
+
 **Institution:** Northeastern University, Toronto
 
 ---

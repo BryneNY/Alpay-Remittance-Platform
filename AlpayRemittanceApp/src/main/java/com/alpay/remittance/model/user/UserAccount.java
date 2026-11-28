@@ -13,6 +13,8 @@ public class UserAccount {
     private int accountId;
     private String username;
     private String password;
+        private Integer organizationId;   // set for staff accounts
+    private Integer enterpriseId;     // set for Enterprise Admins and Senders
     private Role role;
     private Person person;
     private List<Beneficiary> beneficiaries = new ArrayList<>();
@@ -51,7 +53,13 @@ public class UserAccount {
     public Person getPerson() { return person; }
     public void setPerson(Person person) { this.person = person; }
 
-    public List<Beneficiary> getBeneficiaries() { return beneficiaries; }
+      public List<Beneficiary> getBeneficiaries() { return beneficiaries; }
+
+    public Integer getOrganizationId() { return organizationId; }
+    public void setOrganizationId(Integer organizationId) { this.organizationId = organizationId; }
+
+    public Integer getEnterpriseId() { return enterpriseId; }
+    public void setEnterpriseId(Integer enterpriseId) { this.enterpriseId = enterpriseId; }
 
     @Override
     public String toString() {

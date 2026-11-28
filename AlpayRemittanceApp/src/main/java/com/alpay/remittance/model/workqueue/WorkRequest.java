@@ -11,6 +11,7 @@ import java.time.LocalDateTime;
 public abstract class WorkRequest {
 
     private int requestId;
+        private int organizationId;      // the organization whose queue holds this request
     private UserAccount sender;
     private UserAccount receiver;
     private Transfer transfer;
@@ -34,6 +35,8 @@ public abstract class WorkRequest {
 
     public int getRequestId() { return requestId; }
     public void setRequestId(int requestId) { this.requestId = requestId; }
+        public int getOrganizationId() { return organizationId; }
+    public void setOrganizationId(int organizationId) { this.organizationId = organizationId; }
 
     public UserAccount getSender() { return sender; }
     public void setSender(UserAccount sender) { this.sender = sender; }

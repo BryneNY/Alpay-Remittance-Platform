@@ -23,6 +23,6 @@ public enum TransferStatus {
         for (String word : words) {
             label.append(word.charAt(0)).append(word.substring(1).toLowerCase()).append(' ');
         }
-        return label.toString().trim();
+                return label.toString().trim().replace("Mto", "MTO");
     }
 }
